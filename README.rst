@@ -13,12 +13,14 @@ Run the following commands (as root or using sudo)::
 	apt-get install ttf-indic-fonts-core
 
 Follow this guide: http://fatalweb.com/articles/28/how+to+install+phppango+and+phpcairo+on+linux+centos+ubuntu+server
-*Helpful hints for the guide::
 
-	If you aren't root make sure to use sudo when configuring and making.
+Helpful hints for the guide:
+
+- If you aren't root make sure to use sudo when configuring and making.
 	
-	If you need to find a file (for example cairo.so) try:
-	find / -name cairo.so
+- If you need to find a file (for example cairo.so) try::
+
+find / -name cairo.so
 
 In your php project directory clone this repository::
 	
