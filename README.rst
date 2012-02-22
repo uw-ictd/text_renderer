@@ -4,7 +4,7 @@ These libraries are used because the php function imagettftext does not render s
 Setup and Installation
 ============
 
-Setup a Ubuntu/Debian based PHP server on which you are admin (for one click solutions see Turnkey and Bitnami)
+Setup a Ubuntu/Debian based PHP server on which you are admin (for one click solutions see Bitnami or Turnkey).
 
 Run the following commands (as root or using sudo)::
 
@@ -13,12 +13,12 @@ Run the following commands (as root or using sudo)::
 	apt-get install ttf-indic-fonts-core
 
 Follow this guide: http://fatalweb.com/articles/28/how+to+install+phppango+and+phpcairo+on+linux+centos+ubuntu+server
- 
-Helpful Hints::
+*Helpful hints for the guide::
 
-	If you aren't root make sure to use sudo when configuring and making
+	If you aren't root make sure to use sudo when configuring and making.
 	
-	If you need to find where a file (for example cairo.so) try find / -name cairo.so
+	If you need to find a file (for example cairo.so) try:
+	find / -name cairo.so
 
 In your php project directory clone this repository::
 	
@@ -29,19 +29,24 @@ In your php project directory clone this repository::
 	
 	git clone https://nathanathan@github.com/nathanathan/font_renderer.git
 
-Set the ownership of the project directory so the server can read/write to it::
+Set the ownership of this site so the server can read/write to it::
+
 	Bitnami:
-	chown -r bitnami:daemon project_dir
+	chown -r bitnami:daemon font_renderer
 	Turnkey:
-	chown -r www-data project_dir
-	
+	chown -r www-data font_renderer
+
 When you are done reset the server::
+
 	Bitnami:
 	sudo /opt/bitnami/ctlscript.sh restart apache
 	Turnkey:
 	/etc/init.d/apache2 restart
 	
+Now go to [your domain name]/font_renderer and see if the site works.
+	
 If something is not working check your server logs::
+
 	Bitnami:
 	tail -f /opt/bitnami/apache2/logs/error_log
 	Turnkey:
