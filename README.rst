@@ -10,7 +10,7 @@ Run the following commands (as root or using sudo)::
 
 	apt-get update
 	apt-get install pango-graphite pkg-config php5-dev aptitude libcairo2-dev make libpango1.0-dev
-	apt-get install ttf-indic-fonts-core
+	apt-get install ttf-indic-fonts
 
 Follow this guide: http://fatalweb.com/articles/28/how+to+install+phppango+and+phpcairo+on+linux+centos+ubuntu+server
 
