@@ -26,7 +26,13 @@ body {padding-top: 80px;}
     <div class="page-header">
         <h1>Text Renderer</h1>
     </div>
-
+	<div class="well">
+        	<p>This site is intended for rendering text images for use with ODK Collect.</p>
+        	<p>Not all scripts are completely supported. For example this Oriya character will render incorrectly: 'ଥି'</p>
+        	<p>If there is a script which does not render at all (i.e. you see only boxes), please post the issue on <a href="http://groups.google.com/group/opendatakit">the ODK mailing list</a> and we will try to accommodate it if possible.</p>
+        	<p>This site only supports unicode UTF-8 text. Certain encodings, for exmaple ISFOC, will not work.</p>
+        	<p>If this text renderer does not meet your needs, as a backup plan you can always take screenshots of the text in your choice text editor.</p>
+	</div>
    <div>
 	<img id="generated-image" />
    </div>
@@ -36,17 +42,17 @@ body {padding-top: 80px;}
 	<div>
 		<textarea rows="5" name='text'>Enter text here</textarea>
 	</div>
-
+<!--
 	<label>Font Filename</label>
 	<div>
 		<select name='font' style="background-color:white;">
 		  <option>mangal</option>
-		  <!--<option>oriya</option>  -->
-		  <!--<option>assamese</option>-->
+		  <option>oriya</option>  
+		  <option>assamese</option>
 		  <option>times</option>
 		</select>
 	</div>
-
+-->
 	<label>Font Size</label>
 	<div>
 		<select name='fontSize' style="background-color:white;">
@@ -63,16 +69,16 @@ body {padding-top: 80px;}
 	<div>
 		<button id="generate" class="btn" >Render Text</button>
 	</div>
-
-	<div class="well">
-        <h3>CSV Formatting Requirements:</h3>
-        <ul>
-            <li>Save the CSV using UTF-8 character encoding.</li>
-            <li>The first column should be the text to be converted and the second should be the output filename.</li>
-            <li>The values should all be quoted.</li>
-        </ul>
+	<div class="header">
+		<h1>Batch Renderer</h1>
 	</div>
-
+	<div class="well">
+        	<p>If you need to render a large amount of text, you can create a spreadsheet and use the batch renderer to process it all at once.</p>
+        	<p>The spreadsheet must be a CSV and follow the formatting requirements below.</p>
+        	<p>The output will be a zipped directory. If you are using a Windows machine you might need to use a program like 7-zip to properly extract the directory.</p>
+        	<p>The font size parameter is taken from above.</p>
+	</div>
+	
 	<label>CSV</label>
 	<div>
 		<input type="file" name="file" id="file" /> 
@@ -81,16 +87,25 @@ body {padding-top: 80px;}
 	<div>
 		<input id="render-csv" class="btn" type=submit value="Render CSV" />
 	</div>
+	
+	<div class="well">
+        <h3>CSV Formatting Requirements:</h3>
+        <ul>
+            <li>The CSV must be saved so that it uses UTF-8 character encoding and all values are quoted. (OpenOffice and LibreOffice make this easy to do).</li>
+            <li>The first column should be the text to be rendered (with the column header "translation") and the second should be the output filename (with the column header "filename").</li>
+        </ul>
+	</div>
 </form>
 
 <div id="csv-out"></div>
 
 </div>
+<footer><a href="https://github.com/nathanathan/font_renderer">Source code available here</a></footer>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript">
 function addParams(baseURL){
 	var text_field = $('textarea[name=text]').val();
-	var font = $('select[name=font]').val();
+	var font = "arial";//$('select[name=font]').val();
 	var fontSize = $('select[name=fontSize]').val();
 	
 	var font_params = "";
