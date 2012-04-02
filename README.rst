@@ -20,7 +20,7 @@ Helpful hints for the guide:
 	
 - If you need to find a file (for example cairo.so) try::
 
-find / -name cairo.so
+	find / -name cairo.so
 
 In your php project directory clone this repository::
 	
