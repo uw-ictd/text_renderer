@@ -1,5 +1,5 @@
 <?php header( 'Content-Type: text/html; charset=UTF-8' ); ?>
-<<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -13,14 +13,15 @@ body {padding-top: 2%;}
 <div class="container">
     <div class="page-header">
         <h1>Text Renderer</h1>
-            <div>
+        	<br />
+			<div>
         	<p>
             This site is intended for rendering text images for use with ODK Collect. Not all scripts are completely supported. For example this Oriya character will render incorrectly: 'ଥି'
         	If there is a script which does not render at all (i.e. you see only boxes), please post the issue on <a href="http://groups.google.com/group/opendatakit">the ODK mailing list</a> and we will try to accommodate it if possible.
         	This site only supports unicode UTF-8 text. Certain encodings, for exmaple ISFOC, will not work.
         	If this text renderer does not meet your needs, as a backup plan you can always take screenshots of the text in your choice text editor.
             </p>
-	</div>
+			</div>
     </div>
 
    <div>
@@ -59,9 +60,10 @@ body {padding-top: 2%;}
 	<div>
 		<button id="generate" class="btn" >Render Text</button>
 	</div>
-    <br />
+    <hr />
 	<div class="header">
 		<h1>Batch Renderer</h1>
+		<br />
         <div>
         	<p>
             If you need to render a large amount of text, you can create a spreadsheet and use the batch renderer to process it all at once.
