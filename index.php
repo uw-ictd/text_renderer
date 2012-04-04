@@ -1,44 +1,34 @@
 <?php header( 'Content-Type: text/html; charset=UTF-8' ); ?>
-<!DOCTYPE HTML>
-<!--
-/*
- * jQuery File Upload Plugin Demo 6.0.4
- * https://github.com/blueimp/jQuery-File-Upload
- *
- * Copyright 2010, Sebastian Tschan
- * https://blueimp.net
- *
- * Licensed under the MIT license:
- * http://www.opensource.org/licenses/MIT
- */
--->
+<<!DOCTYPE HTML>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <title>Text Renderer</title>
-<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap.min.css">
 <style type="text/css">
-body {padding-top: 80px;}
+body {padding-top: 2%;}
 </style>
 </head>
 <body>
 <div class="container">
     <div class="page-header">
         <h1>Text Renderer</h1>
-    </div>
-	<div class="well">
-        	<p>This site is intended for rendering text images for use with ODK Collect.</p>
-        	<p>Not all scripts are completely supported. For example this Oriya character will render incorrectly: 'ଥି'</p>
-        	<p>If there is a script which does not render at all (i.e. you see only boxes), please post the issue on <a href="http://groups.google.com/group/opendatakit">the ODK mailing list</a> and we will try to accommodate it if possible.</p>
-        	<p>This site only supports unicode UTF-8 text. Certain encodings, for exmaple ISFOC, will not work.</p>
-        	<p>If this text renderer does not meet your needs, as a backup plan you can always take screenshots of the text in your choice text editor.</p>
+            <div>
+        	<p>
+            This site is intended for rendering text images for use with ODK Collect. Not all scripts are completely supported. For example this Oriya character will render incorrectly: 'ଥି'
+        	If there is a script which does not render at all (i.e. you see only boxes), please post the issue on <a href="http://groups.google.com/group/opendatakit">the ODK mailing list</a> and we will try to accommodate it if possible.
+        	This site only supports unicode UTF-8 text. Certain encodings, for exmaple ISFOC, will not work.
+        	If this text renderer does not meet your needs, as a backup plan you can always take screenshots of the text in your choice text editor.
+            </p>
 	</div>
+    </div>
+
    <div>
 	<img id="generated-image" />
    </div>
 
 <form id="myForm" action="gen_zip.php?width=400" method="post" enctype="multipart/form-data">
-	<label>Text</label>
+	<label>Text: </label>
 	<div>
 		<textarea rows="5" name='text'>Enter text here</textarea>
 	</div>
@@ -53,7 +43,7 @@ body {padding-top: 80px;}
 		</select>
 	</div>
 -->
-	<label>Font Size</label>
+	<label>Font Size: </label>
 	<div>
 		<select name='fontSize' style="background-color:white;">
 		  <option>14</option>
@@ -69,17 +59,20 @@ body {padding-top: 80px;}
 	<div>
 		<button id="generate" class="btn" >Render Text</button>
 	</div>
+    <br />
 	<div class="header">
 		<h1>Batch Renderer</h1>
+        <div>
+        	<p>
+            If you need to render a large amount of text, you can create a spreadsheet and use the batch renderer to process it all at once.
+        	The spreadsheet must be a CSV and follow the formatting requirements below.
+        	The output will be a zipped directory. If you are using a Windows machine you might need to use a program like 7-zip to properly extract the directory.
+        	The font size parameter is taken from above.</p>
+    	</div>
 	</div>
-	<div class="well">
-        	<p>If you need to render a large amount of text, you can create a spreadsheet and use the batch renderer to process it all at once.</p>
-        	<p>The spreadsheet must be a CSV and follow the formatting requirements below.</p>
-        	<p>The output will be a zipped directory. If you are using a Windows machine you might need to use a program like 7-zip to properly extract the directory.</p>
-        	<p>The font size parameter is taken from above.</p>
-	</div>
+
 	
-	<label>CSV</label>
+	<label>CSV: </label>
 	<div>
 		<input type="file" name="file" id="file" /> 
 	</div>
@@ -87,7 +80,7 @@ body {padding-top: 80px;}
 	<div>
 		<input id="render-csv" class="btn" type=submit value="Render CSV" />
 	</div>
-	
+    <br />
 	<div class="well">
         <h3>CSV Formatting Requirements:</h3>
         <ul>
@@ -100,7 +93,7 @@ body {padding-top: 80px;}
 <div id="csv-out"></div>
 
 </div>
-<footer><a href="https://github.com/nathanathan/font_renderer">Source code available here</a></footer>
+<footer><center><a href="https://github.com/nathanathan/font_renderer">Source code available here</a></center></footer>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript">
 function addParams(baseURL){
