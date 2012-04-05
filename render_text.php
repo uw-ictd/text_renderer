@@ -21,6 +21,10 @@ function render_text($params, $outFile){
 	if(array_key_exists('font', $params)){
 		$font = $params['font'];
 	}
+	$useMarkup = false;
+	if(array_key_exists('useMarkup', $params)){
+		$useMarkup = $params['useMarkup'];
+	}
 	
 	//Create a dummy cairo surface and context needed to init the Pango Layout
 	$dummy_surface = new CairoImageSurface(CairoFormat::ARGB32, 1, 1);
@@ -36,7 +40,13 @@ function render_text($params, $outFile){
 	$l->setWidth($width * Pango::SCALE);
 	//$l->setWrap(PANGO_WRAP_WORD);
 	
-	$l->setText($text);
+	if($useMarkup){
+		$l->setMarkup($text);
+	}
+	else{
+		$l->setText($text);
+	}
+	
 	
 	//Get the computed/logical size of the Pango layout in pixels
 	$size = $l->getPixelSize();

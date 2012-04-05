@@ -56,7 +56,10 @@ body {padding-top: 2%;}
 		  <option>48</option>
 		</select>
 	</div>
-
+	
+    <label>Use <a href="http://developer.gnome.org/pango/stable/PangoMarkupFormat.html">Pango Markup</a>:</label>
+    <input type="checkbox" name="useMarkup" value="true" />
+    
 	<div>
 		<button id="generate" class="btn" >Render Text</button>
 	</div>
@@ -102,10 +105,12 @@ function addParams(baseURL){
 	var text_field = $('textarea[name=text]').val();
 	var font = "arial";//$('select[name=font]').val();
 	var fontSize = $('select[name=fontSize]').val();
+	var useMarkup = $('input[name=useMarkup]').is(':checked');
 	
 	var font_params = "";
 	font_params += "&font=" + font;
 	font_params += "&fontSize=" + fontSize;
+	font_params += "&useMarkup=" + useMarkup;
 
 	var src = baseURL;
 	src += "?width=400";
