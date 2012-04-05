@@ -23,7 +23,7 @@ function render_text($params, $outFile){
 	}
 	$useMarkup = false;
 	if(array_key_exists('useMarkup', $params)){
-		$useMarkup = $params['useMarkup'];
+		$useMarkup = $params['useMarkup'] == "true";
 	}
 	
 	//Create a dummy cairo surface and context needed to init the Pango Layout
