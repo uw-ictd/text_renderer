@@ -33,17 +33,7 @@ body {padding-top: 2%;}
 	<div>
 		<textarea rows="5" name='text'>Enter text here</textarea>
 	</div>
-<!--
-	<label>Font Filename</label>
-	<div>
-		<select name='font' style="background-color:white;">
-		  <option>mangal</option>
-		  <option>oriya</option>  
-		  <option>assamese</option>
-		  <option>times</option>
-		</select>
-	</div>
--->
+
 	<label>Font Size: </label>
 	<div>
 		<select name='fontSize' style="background-color:white;">
@@ -103,7 +93,7 @@ body {padding-top: 2%;}
 <script type="text/javascript">
 function addParams(baseURL){
 	var text_field = $('textarea[name=text]').val();
-	var font = "arial";//$('select[name=font]').val();
+	var font = "arial";
 	var fontSize = $('select[name=fontSize]').val();
 	var useMarkup = $('input[name=useMarkup]').is(':checked');
 	
@@ -144,15 +134,6 @@ $(document).ready(function(){
 	$("#generate").click(
 		updateImage
 	);
-	/*
-	$('#myForm').submit(function() {
-		$('#render-csv').replaceWith('<div>Rendering...</div>');
-	});
-	
-	$("#render-csv").click(
-		renderCSV
-	);
-	*/
 });
 //Initialize:
 updateImage();
