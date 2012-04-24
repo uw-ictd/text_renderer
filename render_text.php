@@ -13,7 +13,7 @@ function render_text($params, $outFile){
 	if(array_key_exists('fontSize', $params)){
 		$fontSize = $params['fontSize'];
 	}
-	$width = $params['width'];
+	$width = 400;
 	if(array_key_exists('width', $params)){
 		$width = $params['width'];
 	}
