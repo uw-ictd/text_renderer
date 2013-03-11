@@ -1,6 +1,7 @@
 This is a php website for rendering fonts using Pango and Cairo.
 These libraries are used because the php function imagettftext does not render some Indic scripts correctly.
-This tool was built as a workaround for using scripts in ODK Collect that were not supported by Android.
+This tool was built as a workaround for using scripts in ODK Collect that were not supported by Android
+(`more information <http://opendatakit.org/help/image-based-forms/>`_).
 
 Setup and Installation
 ============
