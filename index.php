@@ -81,6 +81,7 @@ body {padding-top: 2%;}
         <ul>
             <li>The CSV must be saved so that it uses UTF-8 character encoding and all values are quoted. (OpenOffice and LibreOffice make this easy to do).</li>
             <li>The first column should be the text to be rendered (with the column header "translation") and the second should be the output filename (with the column header "filename").</li>
+            <li>There is an example csv available <a href="example.csv">here</a>.</li>
         </ul>
 	</div>
 </form>
@@ -88,7 +89,7 @@ body {padding-top: 2%;}
 <div id="csv-out"></div>
 
 </div>
-<footer><center><a href="https://github.com/nathanathan/font_renderer">Source code available here</a></center></footer>
+<footer><center><a href="https://github.com/uw-ictd/text_renderer">Source code available here</a></center></footer>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript">
 function addParams(baseURL){
